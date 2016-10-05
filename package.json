@@ -1,0 +1,25 @@
+{
+  "name": "data_visualization",
+  "version": "1.0.0",
+  "description": "Its a repository to visualize child mortality rate accross globe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumanmaity112/data_visualization.git"
+  },
+  "keywords": [
+    "mortality"
+  ],
+  "author": "Suman Maity, Supriya Gole, Prasun Kumar Palchowdhary, Madhuri Patil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumanmaity112/data_visualization/issues"
+  },
+  "homepage": "https://github.com/sumanmaity112/data_visualization#readme",
+  "dependencies": {
+    "papaparse": "^4.1.2"
+  }
+}
