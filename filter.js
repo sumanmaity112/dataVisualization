@@ -1,6 +1,6 @@
-var data = require('../process_data.js').parsedData;
+var data = require('./process_data.js').parsedData;
 
-var filter80PercentageAboveCountries = function(data){
+var filterValidCountries = function(data){
     var totalLength = data[0].length;
     minNumberOfEntries = totalLength * 0.2 +1;
     return filter(minNumberOfEntries, data);
@@ -15,4 +15,4 @@ var filter = function(minNumberOfEntries, data){
     return validCountryData;
 }
 
-console.log(filter80PercentageAboveCountries(data).length);
+console.log(filterValidCountries(data));
