@@ -22,10 +22,10 @@ var convert = function (headers, data) {
     var countries = getCountryNames(data);
 
     countries.forEach(function (country, index) {
-        mortalityCountryWiseData[country] = {};
+        mortalityCountryWiseData[country] = [];
         var information = data[index];
         headers.forEach(function (header, index) {
-            mortalityCountryWiseData[country][header] = information[++index];
+            mortalityCountryWiseData[country].push({year: header, rate: information[++index]});
         });
     });
     return mortalityCountryWiseData;
