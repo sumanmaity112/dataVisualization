@@ -1,18 +1,16 @@
-var data = require('./process_data.js').parsedData;
+var data = require('./process_data.js')();
 
 var filterValidCountries = function(data){
     var totalLength = data[0].length;
-    minNumberOfEntries = totalLength * 0.2 +1;
-    return filter(minNumberOfEntries, data);
-}
+    minimumNumberOfEntries = totalLength * 0.2 +1;
+    return filter(minimumNumberOfEntries, data);
+};
 
-var filter = function(minNumberOfEntries, data){
-    var validCountryData = []
+var filter = function(minimumNumberOfEntries, data){
+    var validCountryData = [];
     for(var i = 0 ; i < data.length ; i++){
-        if(data[i].slice(1,minNumberOfEntries).join("") != "")
+        if(data[i].slice(1,minimumNumberOfEntries).join("") != "")
             validCountryData.push(data[i]);
-    }
+    };
     return validCountryData;
-}
-
-console.log(filterValidCountries(data));
+};
