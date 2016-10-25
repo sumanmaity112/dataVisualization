@@ -31,4 +31,6 @@ var convert = function (headers, data) {
     return mortalityCountryWiseData;
 };
 
+console.log(papa.unparse(processData()));
+
 module.exports = processData;

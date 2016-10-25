@@ -1,4 +1,8 @@
-var data = require('./process_data.js')();
+//var data = require('./process_data.js')();
+var papa = require("papaparse");
+var fs = require("fs");
+var text = fs.readFileSync('data/mortality_data.csv', 'utf8');
+var data = papa.parse(text).data;
 
 var filterValidCountries = function(data){
     var totalLength = data[0].length;
@@ -14,3 +18,8 @@ var filter = function(minimumNumberOfEntries, data){
     };
     return validCountryData;
 };
+
+fs.writeFileSync("data/result.csv", papa.unparse(filterValidCountries(data)));
+
+
+console.log(fs.readFileSync("data/result.csv"));
