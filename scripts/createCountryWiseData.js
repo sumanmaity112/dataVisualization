@@ -8,7 +8,7 @@ var createCountryWiseData = function (sourceFileName, destFileName) {
     var fields = data.shift();
     data.forEach(function (entry) {
         var countryWiseData = {};
-        for (var index = 1; index < entry.length; index++) {
+        for (var index = 1; index < fields.length; index++) {
             countryWiseData[fields[index]] = entry[index];
         }
         result[entry[0]] = countryWiseData;

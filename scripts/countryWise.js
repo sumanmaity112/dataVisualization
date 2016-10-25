@@ -7,8 +7,6 @@ const INNER_WIDTH = WIDTH - (2 * MARGIN);
 
 var getDataByCountryName = function (countryName) {
     var data = DATA[countryName];
-    delete data["MAX"];
-    delete data["Average"];
     var result = [];
     Object.keys(data).forEach(function (key) {
         var date = new Date();
@@ -18,29 +16,23 @@ var getDataByCountryName = function (countryName) {
     return result;
 };
 
-
-
 var translate = function (x, y) {
     return 'translate(' + x + ', ' + y + ')';
 };
 
-
 var load = function (entries) {
     var xScale = d3.scaleTime()
-        .domain(d3.extent(entries, function(entry){
+        .domain(d3.extent(entries, function (entry) {
             return entry["year"]
         }))
         .range([0, INNER_WIDTH]);
 
 
     var yScale = d3.scaleLinear()
-        .domain(d3.extent(entries, function(entry){
+        .domain(d3.extent(entries, function (entry) {
             return entry["rate"]
         }))
         .range([INNER_HEIGHT, 0]);
-
-
-
 
     var line = d3.line()
         .x(function (entry) {
@@ -63,12 +55,10 @@ var load = function (entries) {
 
 };
 
-
-
 var main = function () {
     d3.json("data/countryWiseData.json", function (data) {
         DATA = data;
-        var entries =  getDataByCountryName("India");
+        var entries = getDataByCountryName("India");
         load(entries)
     });
 }();
