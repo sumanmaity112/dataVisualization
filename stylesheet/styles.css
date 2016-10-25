@@ -7,3 +7,8 @@ body{
 .container{
     border:1px solid blue;
 }
+
+.path{
+    fill: none;
+    stroke: black;
+}
