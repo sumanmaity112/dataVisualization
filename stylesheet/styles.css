@@ -1,14 +1,9 @@
-body{
-    border:1px solid black;
-    height: 750px;
-    width: 1200px;
+#container {
+    margin-top: 20px;
+    border: 1px solid blue;
 }
 
-.container{
-    border:1px solid blue;
-}
-
-.path{
+.path {
     fill: none;
     stroke: black;
 }

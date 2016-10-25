@@ -2,12 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Country wise data</title>
     <link rel="stylesheet" href="stylesheet/styles.css">
 </head>
 <body>
 <script type="text/javascript" src="scripts/d3.v4.min.js"></script>
 <script type="text/javascript" src="scripts/countryWise.js"></script>
+<div>
+    <form action="javascript:loadChartByCountry();">
+        <input list="countries" name="countries" id="countryName" required>
+        <datalist id="countries"></datalist>
+        <button type="submit">Load</button>
+    </form>
+
+</div>
 <div id="container"></div>
 </body>
 </html>
