@@ -42,12 +42,16 @@ var load = function (entries) {
         }))
         .range([INNER_HEIGHT, 0]);
 
+    entries = entries.filter(function (entry) {
+        return entry.rate != 0;
+    });
+
     var line = d3.line()
         .x(function (entry) {
             return xScale(entry["year"])
         })
         .y(function (entry) {
-            return yScale(entry["rate"])
+            return yScale(entry["rate"]);
         });
 
     var g = d3.select("#chart g");
